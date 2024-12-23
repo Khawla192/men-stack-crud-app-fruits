@@ -5,7 +5,7 @@ const express = require('express')
 const morgan = require('morgan')
 
 // Models
-const Fruit = require("./models/fruit.js")
+const Fruit = require("./models/fruit")
 
 const app = express()
 
