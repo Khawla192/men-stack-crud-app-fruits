@@ -1,10 +1,11 @@
-// Here is where we import modules
-// We begin by loading Express
+require("dotenv").config()
+require('./config/database')
+
 const express = require('express')
 const morgan = require('morgan')
 
-const dotenv = require("dotenv") // require package
-dotenv.config() // Loads the environment variables from .env file
+// Models
+const Fruit = require("./models/fruit.js")
 
 const app = express()
 
@@ -16,9 +17,12 @@ app.use(morgan('dev'))
 app.get("/", async (req, res) => {
     res.render("index.ejs")
 })
+
+// GET /fruits/new
+app.get("/fruits/new", (req, res) => {
+    res.render("fruits/new.ejs")
+})
   
-
-
 // LISTENER
 app.listen(3000, () => {
   console.log('Listening on port 3000')

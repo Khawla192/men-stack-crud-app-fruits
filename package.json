@@ -17,6 +17,8 @@
     "nodemon": "^3.1.9"
   },
   "dependencies": {
-    "ejs": "^3.1.10"
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "mongoose": "^8.9.2"
   }
 }
