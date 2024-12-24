@@ -19,6 +19,7 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
+    "method-override": "^3.0.0",
     "mongoose": "^8.9.2"
   }
 }
