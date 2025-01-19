@@ -4,28 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>
         <%= fruit.name %>
     </title>
 </head>
 
 <body>
-    <h1>
-        <%= fruit.name %>
-    </h1>
-    <a href="/fruits">Back to Fruits</a>
+    <div class="fruit-details">
+        <h1>
+            <%= fruit.name %>
+        </h1>
 
-    <% if (fruit.isReadyToEat) { %>
-        <p>This fruit is ready to eat!</p>
-    <% } else { %>
-        <p>Better wait to eait a little bit longer!</p>
-    <% } %>
+        <% if (fruit.isReadyToEat) { %>
+            <p>This fruit is ready to eat!</p>
+            <% } else { %>
+                <p>Better wait to eait a little bit longer!</p>
+                <% } %>
 
-    <form action="/fruits/<%=fruit._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete <%= fruit.name %></button>
-    </form>
-    <a href="/fruits/<%= fruit._id %>/edit">Edit <%= fruit.name %></a>
-  
+                    <div class="fruit-actions">
+                        <form class="delete-form" action="/fruits/<%=fruit._id%>?_method=DELETE" method="POST">
+                            <button class="delete-button" type="submit">
+                                Delete <%= fruit.name %>
+                            </button>
+                        </form>
+                        <a class="edit-link" href="/fruits/<%= fruit._id %>/edit">
+                            <div class="edit-text">
+                                Edit <%= fruit.name %>
+                            </div>
+                        </a>
+                    </div>
+    </div>
+    <a class="fruits-index-link" href="/fruits">
+        <div class="index-link-text">Back to Fruits</div>
+    </a>
+
 </body>
 
 </html>
